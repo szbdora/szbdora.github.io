@@ -129,24 +129,33 @@ if uploaded_file:
         st.plotly_chart(rank_fig, use_container_width=True)
 
         # 6. GDP kapcsolat
-        st.subheader("6. GDP és öngyilkosság kapcsolata")
-        gdp_fig = px.scatter(
-            filtered_df, x="gdp_per_capita ($)", y="suicide_rate",
-            size="population", color="country",
-            title="GDP per fő és öngyilkossági ráta kapcsolata",
-            labels={"gdp_per_capita ($)": "GDP per fő", "suicide_rate": "Öngyilkossági ráta"}
-        )
-        st.plotly_chart(gdp_fig, use_container_width=True)
+    st.subheader("6. GDP és öngyilkosság kapcsolata")
+    gdp_fig = px.scatter(
+        filtered_df, x="gdp_per_capita ($)", y="suicide_rate",
+        size="population", color="country",
+        title="GDP per fő és öngyilkossági ráta kapcsolata",
+        labels={"gdp_per_capita ($)": "GDP per fő", "suicide_rate": "Öngyilkossági ráta"}
+    )
+    st.plotly_chart(gdp_fig, use_container_width=True)
 
         # 7. HDI kapcsolat
-        st.subheader("7. HDI és öngyilkosság kapcsolata")
-        hdi_df = filtered_df.dropna(subset=["HDI for year"])
-        hdi_fig = px.scatter(
-            hdi_df, x="HDI for year", y="suicide_rate", color="country",
-            title="HDI és öngyilkossági ráta kapcsolata",
-            labels={"HDI for year": "HDI", "suicide_rate": "Öngyilkossági ráta"}
-        )
-        st.plotly_chart(hdi_fig, use_container_width=True)
+    st.subheader("7. HDI és öngyilkosság kapcsolata")
+    hdi_df = filtered_df.dropna(subset=["HDI for year"])
+    hdi_fig = px.scatter(
+        hdi_df, x="HDI for year", y="suicide_rate", color="country",
+        title="HDI és öngyilkossági ráta kapcsolata",
+        labels={"HDI for year": "HDI", "suicide_rate": "Öngyilkossági ráta"}
+    )
+    st.plotly_chart(hdi_fig, use_container_width=True)
+
+        # 8. Összefoglalás
+    st.subheader("8. Tanulságok")
+    st.markdown("""
+    - Az öngyilkossági ráta jelentősen változik országonként, nemek, életkor és gazdasági mutatók szerint.
+    - A magasabb GDP nem minden esetben jelent alacsonyabb öngyilkossági arányt.
+    - Az időbeli trendek fontosak lehetnek a mentális egészségpolitika alakításához.
+    - A vizualizációk alapján az idős, férfi populáció a legveszélyeztetettebb.
+    """)
 
 else:
     st.warning("Kérlek, tölts fel egy .xlsx fájlt az adatok megjelenítéséhez.")
