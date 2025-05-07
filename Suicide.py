@@ -77,7 +77,7 @@ elif page == "Vizualizációk" and uploaded_file is not None:
     # Szűrők
     st.sidebar.header("Szűrők")
     selected_country = st.sidebar.multiselect(
-        "Ország kiválasztása", options=sorted(df["country"].unique()), default=["Hungary", "Austria"]
+        "Ország kiválasztása", options=sorted(df["country"].unique()), default=["Hungary", "Romania"]
     )
     selected_years = st.sidebar.slider(
         "Év kiválasztása",
