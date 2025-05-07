@@ -71,7 +71,7 @@ if uploaded_file:
         # Szűrési lehetőségek
         st.sidebar.header("Szűrők")
         selected_country = st.sidebar.multiselect(
-            "Ország kiválasztása", options=sorted(df["country"].unique()), default=["Hungary", "Austria"]
+            "Ország kiválasztása", options=sorted(df["country"].unique()), default=["Hungary", "Romania"]
         )
         selected_years = st.sidebar.slider(
             "Év kiválasztása", min_value=int(df["year"].min()), max_value=int(df["year"].max()), value=(1990, 2016)
