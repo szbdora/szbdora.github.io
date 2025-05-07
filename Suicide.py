@@ -66,6 +66,7 @@ if uploaded_file:
         - Élő adatkapcsolat pl. WHO-tól
         - Interaktív adatfeltöltés saját elemzésekhez
         """)
+        break;
 
     elif page == "Vizualizációk":
         # Szűrési lehetőségek
