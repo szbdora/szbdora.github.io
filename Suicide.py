@@ -65,8 +65,9 @@ if uploaded_file:
         - Prediktív modellek
         - Élő adatkapcsolat pl. WHO-tól
         - Interaktív adatfeltöltés saját elemzésekhez
-        """)
         break;
+        """)
+        
 
     elif page == "Vizualizációk":
         # Szűrési lehetőségek
